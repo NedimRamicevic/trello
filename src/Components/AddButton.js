@@ -1,6 +1,6 @@
 import {React,useState} from 'react'
 
-function AddButton() {
+function AddButton({handleSubmit}) {
 
     const [showBtn, setShowBtn] = useState(false);
     const showBtnFun = ({target}) => {

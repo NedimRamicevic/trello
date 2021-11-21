@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Item() {
+function Item({name}) {
     return (
-        <div>
-            
+        <div className="item" >
+            <button>{name}</button>
         </div>
     )
 }

@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+.Containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.ItemContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-style:solid;
+  border-color: black;
+  width:100%
+
+}
+.item {
+
+}

@@ -3,7 +3,7 @@ import Item from './Item'
 
 function ItemContainer({name, itemList}) {
     return (
-        <div className={name} >
+        <div className="ItemContainer" >
             <p>{name}</p>
             {itemList ? 
             itemList.map(item =>(

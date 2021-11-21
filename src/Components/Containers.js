@@ -4,6 +4,7 @@ import ItemContainer from './ItemContainer'
 
 function Containers() {
     const {containerList} = useContext(ItemContext)
+    console.log(containerList)
     return (
         <div className="Containers" >
             {containerList ?

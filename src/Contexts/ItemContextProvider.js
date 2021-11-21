@@ -5,7 +5,11 @@ export const ItemContext = React.createContext()
 const preDefinedList = [
      {
         name: "To Do",
-        itemList : []
+        itemList : [
+            {name : "nedim"},
+            {name : "neim"},
+            {name : "sefa"},
+        ]
     },
      {
         name : "In Progress",
@@ -19,7 +23,7 @@ const preDefinedList = [
 
 
 
-function ItemContextProvider({children}) {
+export function ItemContextProvider({children}) {
 
     const [containerList, setcontainerList] = useState(preDefinedList)
     const [newTask, setNewTask] = useState({})
@@ -57,4 +61,3 @@ function ItemContextProvider({children}) {
     )
 }
 
-export default ItemContextProvider

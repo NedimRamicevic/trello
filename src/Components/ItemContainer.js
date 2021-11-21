@@ -1,10 +1,14 @@
 import React from 'react'
 import {Item} from './Item'
 
-function ItemContainer() {
+function ItemContainer({name, itemList}) {
     return (
-        <div className="itemContainer" >
-            <Item />
+        <div className={name} >
+            {itemList ? 
+            itemList.map(item =>(
+                <Item />
+            ))    
+        }
         </div>
     )
 }

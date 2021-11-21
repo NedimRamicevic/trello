@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Item({name}) {
+function Item({item}) {
+    console.log(item)
     return (
         <div className="item" >
-            <button>{name}</button>
+            <button>{item.name}</button>
         </div>
     )
 }

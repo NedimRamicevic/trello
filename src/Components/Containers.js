@@ -8,8 +8,8 @@ function Containers() {
     return (
         <div className="Containers" >
             {containerList ?
-        containerList.map(x => (
-        <ItemContainer name = {x.name} itemList ={x.itemList} />
+        containerList.map((x,index) => (
+        <ItemContainer key={index}  name = {x.name} itemList ={x.itemList} />
         ))
         : null
         }

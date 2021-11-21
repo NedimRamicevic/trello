@@ -6,8 +6,8 @@ function ItemContainer({name, itemList}) {
         <div className="ItemContainer" >
             <p>{name}</p>
             {itemList ? 
-            itemList.map(item =>(
-                <Item name ={item.name} />
+            itemList.map((item,index) =>(
+                <Item key={index} item={item} />
             ))
             :null    
         }

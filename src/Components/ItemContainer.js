@@ -4,10 +4,14 @@ import Item from './Item'
 function ItemContainer({name, itemList}) {
 
     const onDragOver = (ev) =>{
-        ev.prevenDefault()
+        ev.preventDefault()
     }
+    const onDrop = (ev,cat) =>{
+        let id = ev.dataTransfer.getData("name")
+    }
+
     return (
-        <div className="ItemContainer" onDragOver={(e)=>onDragOver(e)} >
+        <div className="ItemContainer" onDragOver={(e)=>onDragOver(e)} onDrop={(e)=> onDrop(e,name) } >
             <p>{name}</p>
             {itemList ? 
             itemList.map((item,index) =>(

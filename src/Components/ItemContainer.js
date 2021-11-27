@@ -1,13 +1,20 @@
-import React from 'react'
+import  {React, useContext } from 'react'
+import { ItemContext } from '../Contexts/ItemContextProvider'
 import Item from './Item'
 
 function ItemContainer({name, itemList}) {
 
+    const {containerList,setContainerList} = useContext(ItemContext)
     const onDragOver = (ev) =>{
         ev.preventDefault()
     }
     const onDrop = (ev,cat) =>{
         let id = ev.dataTransfer.getData("name")
+        containerList.forEach(element => {
+            if(element.name ===  cat){
+                console.log(element)
+            }
+        });
     }
 
     return (

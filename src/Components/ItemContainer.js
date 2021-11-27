@@ -7,7 +7,7 @@ function ItemContainer({name, itemList}) {
         ev.prevenDefault()
     }
     return (
-        <div className="ItemContainer" onDragOver={(e)=>onDragOver(e) } >
+        <div className="ItemContainer" onDragOver={(e)=>onDragOver(e)} >
             <p>{name}</p>
             {itemList ? 
             itemList.map((item,index) =>(

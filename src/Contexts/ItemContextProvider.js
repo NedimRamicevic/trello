@@ -2,30 +2,19 @@ import React, {useState} from 'react'
 
 export const ItemContext = React.createContext()
 
-const preDefinedList = [
-     {
-        name: "To Do",
-        itemList : [
-            {name : "nedim"},
-            {name : "neim"},
-            {name : "sefa"},
-        ]
-    },
-     {
-        name : "In Progress",
-        itemList : []
-    },
-     {
-        name : "Done",
-        itemList : []
-    }
+const preDefinedContainerList = ["To Do", "In Progress","Done"]
+const preDefineditemList = [
+            {name : "nedim", type : "Done"},
+            {name : "neim", type : "Done"},
+            {name : "sefa", type : "Done"},
 ]
 
 
 
 export function ItemContextProvider({children}) {
 
-    const [containerList, setcontainerList] = useState(preDefinedList)
+    const [containerList, setcontainerList] = useState(preDefinedContainerList)
+    const [itemList, setItemList] = useState(preDefineditemList)
     const [newTask, setNewTask] = useState({})
 
     const handleChange = ({target}) => {
@@ -55,7 +44,7 @@ export function ItemContextProvider({children}) {
 
 
     return (
-        <ItemContext.Provider value = {{handleSubmit, handleChange, containerList, newTask, setcontainerList}}>
+        <ItemContext.Provider value = {{handleSubmit, handleChange, containerList, newTask, setcontainerList, itemList,setItemList }}>
             {children}
         </ItemContext.Provider>
     )

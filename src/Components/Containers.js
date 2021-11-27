@@ -3,13 +3,13 @@ import {ItemContext} from '../Contexts/ItemContextProvider'
 import ItemContainer from './ItemContainer'
 
 function Containers() {
-    const {containerList} = useContext(ItemContext)
+    const {containerList,itemList} = useContext(ItemContext)
     console.log(containerList)
     return (
         <div className="Containers" >
             {containerList ?
-        containerList.map((x,index) => (
-        <ItemContainer key={index}  name = {x.name} itemList ={x.itemList} />
+        containerList.map((key,index) => (
+        <ItemContainer key={index}  name = {key} itemList ={itemList} />
         ))
         : null
         }

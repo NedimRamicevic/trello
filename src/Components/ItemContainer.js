@@ -1,6 +1,7 @@
 import  {React, useContext } from 'react'
 import { ItemContext } from '../Contexts/ItemContextProvider'
 import Item from './Item'
+import AddButton from './AddButton'
 
 function ItemContainer({name}) {
 
@@ -31,6 +32,7 @@ function ItemContainer({name}) {
             ))
             :null    
         }
+        <AddButton />
         </div>
     )
 }

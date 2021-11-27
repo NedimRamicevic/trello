@@ -11,7 +11,6 @@ function ItemContainer({name}) {
     }
     const onDrop = (ev,cat) =>{
         let tasks =[]
-        console.log("itemlist",itemList)
         let id = ev.dataTransfer.getData("name")
         tasks = itemList.filter(task =>{
             if (task.name === id) {
@@ -19,7 +18,6 @@ function ItemContainer({name}) {
             }
             return task
         })
-        console.log("tasks",tasks)
         setItemList(tasks)
     }
 
@@ -32,7 +30,7 @@ function ItemContainer({name}) {
             ))
             :null    
         }
-        <AddButton />
+        <AddButton cat = {name}/>
         </div>
     )
 }

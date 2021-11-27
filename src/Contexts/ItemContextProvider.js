@@ -17,29 +17,23 @@ export function ItemContextProvider({children}) {
     const [itemList, setItemList] = useState(preDefineditemList)
     const [newTask, setNewTask] = useState({})
 
-    const handleChange = ({target}) => {
-        const[name, value, column] = target
+    const handleChange = (target) => {
+        const {name, value} = target
         setNewTask(
             (prev) => {
                 return {
                     ...prev, 
-                [name] : value,
-                id : Date.now() ,
-                column : column
+                name : value,
+                type : name  
                 }
             }   
-        )}
+        )
+    }
 
-    const handleSubmit = (event) => {
-        if(!newTask.title) return;
-        setcontainerList(
-            (prev) => {
-                return [newTask, ...prev]
-            }
-        )
-        setNewTask(
-            {}
-        )
+    const handleSubmit = () => {
+       setItemList(prev =>(
+           [...prev,newTask]
+       ))
     }
 
 

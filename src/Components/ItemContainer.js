@@ -2,27 +2,24 @@ import  {React, useContext } from 'react'
 import { ItemContext } from '../Contexts/ItemContextProvider'
 import Item from './Item'
 
-function ItemContainer({name, itemList}) {
+function ItemContainer({name}) {
 
-    const {containerList,setcontainerList} = useContext(ItemContext)
+    const {itemList,setItemList} = useContext(ItemContext)
     const onDragOver = (ev) =>{
         ev.preventDefault()
     }
     const onDrop = (ev,cat) =>{
-        console.log("containerList",containerList[0])
+        let tasks =[]
+        console.log("itemlist",itemList)
         let id = ev.dataTransfer.getData("name")
-        let newList = containerList
-        newList.push({name:id})
-        setcontainerList(prev =>(
-            prev.filter(x =>{
-                if (x.name === containerList[cat].name) {
-                    x.itemList = newList
-                }
-                return x
-            })
-            
-        ))
-        
+        tasks = itemList.filter(task =>{
+            if (task.name === id) {
+                task.type = cat
+            }
+            return task
+        })
+        console.log("tasks",tasks)
+        setItemList(tasks)
     }
 
     return (

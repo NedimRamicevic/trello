@@ -51,5 +51,6 @@
 
 }
 .item {
-
+  border: 1px solid;
+  border-radius: 16px;
 }

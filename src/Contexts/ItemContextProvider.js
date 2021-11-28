@@ -32,15 +32,10 @@ export function ItemContextProvider({children}) {
         )
     }
 
-    const handleSubmit = () => {
-       setItemList(prev =>(
-           [...prev,newTask]
-           ))
-    }
 
 
     return (
-        <ItemContext.Provider value = {{handleSubmit, handleChange, containerList, newTask, setcontainerList, itemList,setItemList }}>
+        <ItemContext.Provider value = {{handleChange, containerList, newTask, setcontainerList, itemList,setItemList }}>
             {children}
         </ItemContext.Provider>
     )

@@ -50,6 +50,7 @@ function AddItemModal({close}) {
             <div className="modal-content" >
                 <div className="modal-header" >
                     <h4 className="modal-title" >Create Task</h4>
+                    <button className="close-btn" onClick={()=>close(false)} >X</button>
                 </div>
                 <div className="modal-body">
                     <div className="name">

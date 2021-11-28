@@ -71,6 +71,7 @@
   background-color: white;
 }
 .moda-header{
+
   padding: 10px;
 }
 .modal-body{
@@ -86,4 +87,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;  
+}
+.close-btn{
+  position: relative;
+	width: 23px;
+	height: 23px;
+	border: 2px solid #eef5df;
+	background-color: #ff5248;
+	border-radius: 50%;
+  right: -140px;
+  top: -80px;
 }

@@ -18,6 +18,7 @@ function AddButton({cat}) {
             [...prev,newTask]
             ))
         ref.current.value =""
+        setShowBtn(false)
      }
     return (
         <div>

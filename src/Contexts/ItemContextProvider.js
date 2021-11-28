@@ -8,14 +8,14 @@ const preDefineditemList = [
     {id:2, name : "nedim", type : "Done", color : "pink" },
     {id:3, name : "sefa", type : "Done", color : "red" },
 ]
-const initTask = {name:"",type:"",color:""}
+
 
 
 export function ItemContextProvider({children}) {
 
     const [containerList, setcontainerList] = useState(preDefinedContainerList)
     const [itemList, setItemList] = useState(preDefineditemList)
-    const [newTask, setNewTask] = useState(initTask)
+    const [newTask, setNewTask] = useState()
 
     const handleChange = (target) => {
         const {name, value} = target

@@ -4,18 +4,18 @@ export const ItemContext = React.createContext()
 
 const preDefinedContainerList = ["To Do", "In Progress","Done"]
 const preDefineditemList = [
-            {name : "nedim", type : "Done"},
-            {name : "neim", type : "Done"},
-            {name : "sefa", type : "Done"},
+    {id:1, name : "neim", type : "Done", color : "blue" },
+    {id:2, name : "nedim", type : "Done", color : "pink" },
+    {id:3, name : "sefa", type : "Done", color : "red" },
 ]
-
+const initTask = {name:"",type:"",color:""}
 
 
 export function ItemContextProvider({children}) {
 
     const [containerList, setcontainerList] = useState(preDefinedContainerList)
     const [itemList, setItemList] = useState(preDefineditemList)
-    const [newTask, setNewTask] = useState({})
+    const [newTask, setNewTask] = useState(initTask)
 
     const handleChange = (target) => {
         const {name, value} = target
@@ -23,8 +23,10 @@ export function ItemContextProvider({children}) {
             (prev) => {
                 return {
                     ...prev, 
+                id : itemList.length + 1,    
                 name : value,
-                type : name  
+                type : name,
+                color : "yellow"
                 }
             }   
         )
@@ -33,7 +35,7 @@ export function ItemContextProvider({children}) {
     const handleSubmit = () => {
        setItemList(prev =>(
            [...prev,newTask]
-       ))
+           ))
     }
 
 

@@ -11,9 +11,12 @@ function ItemContainer({name}) {
     }
     const onDrop = (ev,cat) =>{
         let tasks =[]
-        let id = ev.dataTransfer.getData("name")
+        let id = ev.dataTransfer.getData("id")
+        console.log(id)
         tasks = itemList.filter(task =>{
-            if (task.name === id) {
+            console.log("dasdadasd")
+            if (task.id == id) {
+                console.log("babababababba")
                 task.type = cat
             }
             return task

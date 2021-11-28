@@ -52,7 +52,12 @@ function AddItemModal({close}) {
                     <h4 className="modal-title" >Create Task</h4>
                 </div>
                 <div className="modal-body">
+                    <div className="name">
+                    <label>Name: </label>
                 <input ref={refId} placeholder="Name" onChange={showBtnFun} ></input>
+                    </div>
+             <div className="category-options" >
+             <label>Category: </label>
             <select ref={refName} onChange={showBtnFun} >
             <option value="" disabled defaultValue>Select your option</option>
                 {containerList ? 
@@ -61,12 +66,16 @@ function AddItemModal({close}) {
                 )) :null   
             }
             </select>
+             </div>
+            <div className="color-options" >
+            <label>Color: </label>
             <select ref={refColor} onChange={showBtnFun}>
                 <option defaultValue>Red</option>
                 <option>Blue</option>
                 <option>Green</option>
                 <option>Yellow</option>
             </select>
+            </div>
             {showBtn ? (
             <button onClick={handleSubmit} >Add Task</button>
         ) : null 

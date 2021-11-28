@@ -35,7 +35,7 @@ export function ItemContextProvider({children}) {
 
 
     return (
-        <ItemContext.Provider value = {{handleChange, containerList, newTask, setcontainerList, itemList,setItemList }}>
+        <ItemContext.Provider value = {{handleChange, containerList, newTask, setcontainerList, itemList,setItemList,setNewTask }}>
             {children}
         </ItemContext.Provider>
     )

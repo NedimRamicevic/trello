@@ -15,16 +15,16 @@ function AddItemModal() {
             setShowBtn(true)
         }
         else setShowBtn(false)
-        onChange()
     }
 
-    const onChange= () => {
+    const handleChange = () => {
+
         setNewTask(
             (prev) => {
                 return {
                     ...prev, 
                 id : itemList.length + 1,    
-                name : refName.current.value,
+                name : refId.current.value,
                 type : refName.current.value,
                 color : refColor.current.value
                 }
@@ -42,9 +42,9 @@ function AddItemModal() {
 
     return (
         <div className="Modal" >
-            <input ref={refId} placeholder="Name" onChange={setShowBtn} ></input>
-            <input ref={refName} placeholder="Type"  onChange={showBtnFun}></input>
-            <input ref={refColor} placeholder="Color"  onChange={showBtnFun}></input>
+            <input ref={refId} placeholder="Name" onChange={showBtnFun} ></input>
+            <input ref={refName} placeholder="Type"  onChange={handleChange}></input>
+            <input ref={refColor} placeholder="Color"  onChange={handleChange}></input>
             {showBtn ? (
             <button onClick={handleSubmit} >Add Task</button>
         ) : null 

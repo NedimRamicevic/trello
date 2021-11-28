@@ -1,5 +1,4 @@
 import './App.css'
-import AddItemModal from './Components/AddItemModal';
 import Containers from './Components/Containers'
 import {ItemContextProvider} from './Contexts/ItemContextProvider'
 
@@ -9,7 +8,6 @@ function App() {
     <div className="App">
       <ItemContextProvider>
         <Containers/>
-        <AddItemModal/>
       </ItemContextProvider>
     </div>
   );

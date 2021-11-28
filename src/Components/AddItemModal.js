@@ -1,7 +1,8 @@
 import {React,useContext, useRef,useState} from 'react'
 import { ItemContext } from '../Contexts/ItemContextProvider'
 
-function AddItemModal() {
+function AddItemModal({close}) {
+    
     const {containerList,setNewTask,itemList,setItemList,newTask} = useContext(ItemContext)
     const refId = useRef()
     const refName = useRef()
@@ -39,14 +40,21 @@ function AddItemModal() {
             ))
             refId.current.value =""
             refName.current.value =""
-            refColor.current.value =""}
+            refColor.current.value =""
+            close(false)
+        }
      }
 
     return (
-        <div className="Modal" >
-            <input ref={refId} placeholder="Name" onChange={showBtnFun} ></input>
+        <div className="modal" >
+            <div className="modal-content" >
+                <div className="modal-header" >
+                    <h4 className="modal-title" >Create Task</h4>
+                </div>
+                <div className="modal-body">
+                <input ref={refId} placeholder="Name" onChange={showBtnFun} ></input>
             <select ref={refName} onChange={showBtnFun} >
-            <option value="" disabled selected>Select your option</option>
+            <option value="" disabled defaultValue>Select your option</option>
                 {containerList ? 
                 containerList.map((cat,index) =>(
                     <option key={index} value={cat} >{cat}</option>
@@ -54,8 +62,7 @@ function AddItemModal() {
             }
             </select>
             <select ref={refColor} onChange={showBtnFun}>
-            <option value="" disabled selected>Select your option</option>
-                <option>Red</option>
+                <option defaultValue>Red</option>
                 <option>Blue</option>
                 <option>Green</option>
                 <option>Yellow</option>
@@ -64,6 +71,8 @@ function AddItemModal() {
             <button onClick={handleSubmit} >Add Task</button>
         ) : null 
         }
+                </div>
+            </div>
         </div>
     )
 }
